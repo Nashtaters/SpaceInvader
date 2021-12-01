@@ -11,6 +11,8 @@ namespace SpaceInvader
             SetPosition(new Point(x, y));
             SetWidth(Constants.ALIEN_WIDTH);
             SetHeight(Constants.ALIEN_HEIGHT);
+            SetImage(Constants.IMAGE_AIEN);
+            GetImage();
         }
     }
 }
