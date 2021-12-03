@@ -21,7 +21,8 @@ namespace SpaceInvader
         public const int DEFAULT_TEXT_OFFSET = 4;
         public const int SPACECRAFT_X = MAX_X / 2;
         public const int SPACECRAFT_Y = MAX_Y - 125;
-
+        public const int X_OFF_SCREEN = 5000;
+        public const int Y_OFF_SCREEN = 5000;
         public const int SPACECRAFT_DX = 8;
         public const int SPACECRAFT_DY = SPACECRAFT_DX * -1;
 

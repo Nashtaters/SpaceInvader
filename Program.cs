@@ -40,7 +40,8 @@ namespace SpaceInvader
 
             // The laser
             cast["laser"] = new List<Actor>();
-            Laser laser = new Laser(300, 450);
+            Laser laser = new Laser(Constants.X_OFF_SCREEN, Constants.Y_OFF_SCREEN);
+            laser.SetVisible(false);
             cast["laser"].Add(laser);
 
             // Create the script
@@ -57,6 +58,9 @@ namespace SpaceInvader
             
             MoveActorsAction moveActors = new MoveActorsAction();
             script["update"].Add(moveActors);
+
+            HandleCollisionsAction removeActors = new HandleCollisionsAction();
+            script["update"].Add(removeActors);
 
             ControlActorsAction moveSpaceCraft = new ControlActorsAction();
             script["input"].Add(moveSpaceCraft);

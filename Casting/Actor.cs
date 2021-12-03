@@ -137,8 +137,11 @@ namespace SpaceInvader.Casting
             int dx = _velocity.GetX();
             int dy = _velocity.GetY();
 
-            int newX = (x + dx) % Constants.MAX_X;
-            int newY = (y + dy) % Constants.MAX_Y;
+            //int newX = (x + dx) % Constants.MAX_X;
+            //int newY = (y + dy) % Constants.MAX_Y;
+
+            int newX = (x + dx);
+            int newY = (y + dy);
 
             if (newX < 0)
             {

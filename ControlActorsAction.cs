@@ -7,7 +7,6 @@ namespace SpaceInvader
 {
     public class ControlActorsAction : Action
     {
-
         private PhysicsService _physics = new PhysicsService();
         private InputService _input = new InputService();
 
@@ -33,6 +32,18 @@ namespace SpaceInvader
             else
             {
                 spaceCraft.SetVelocity(new Point(0, 0));
+            }
+
+            Actor laser = cast["laser"][0];
+            if (_input.IsSpacePressed())
+            {
+                int xPos = laser.GetX();
+                if (xPos == Constants.X_OFF_SCREEN)
+                {
+                    Point laserPos = spaceCraft.GetPosition();
+                    laserPos = new Point(laserPos.GetX() + (Constants.SPACECRAFT_WIDTH / 2), laserPos.GetY());
+                    laser.SetPosition(laserPos);
+                }
             }
         }
     }

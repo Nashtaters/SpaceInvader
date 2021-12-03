@@ -32,6 +32,10 @@ namespace SpaceInvader.Services
         {
             return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_DOWN);
         }
+        public bool IsSpacePressed()
+        {
+            return Raylib.IsKeyDown(Raylib_cs.KeyboardKey.KEY_SPACE);
+        }
 
         /// <summary>
         /// Gets the direction asked for by the current key presses
