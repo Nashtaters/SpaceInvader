@@ -16,6 +16,8 @@ namespace SpaceInvader.Casting
         protected string _text = "";
         private string _image = "";
 
+        protected bool _quitGame = false;
+
         public Actor()
         {
             // Start these at 0, 0 by default
@@ -148,10 +150,10 @@ namespace SpaceInvader.Casting
                 newX = Constants.MAX_X;
             }
 
-            if (newY < 0)
-            {
-                newY = Constants.MAX_Y;
-            }
+            // if (newY < 0)
+            // {
+            //     newY = Constants.MAX_Y;
+            // }
 
             _position = new Point(newX, newY);
         }
@@ -159,6 +161,16 @@ namespace SpaceInvader.Casting
         public override string ToString()
         {
             return $"Position: ({_position.GetX()}, {_position.GetY()}), Velocity({_velocity.GetX()}, {_velocity.GetY()})";
+        }
+
+        public bool KeepPlaying()
+        {
+            return !_quitGame;
+        }
+
+        public void QuitGame()
+        {
+            _quitGame = true;
         }
 
     }

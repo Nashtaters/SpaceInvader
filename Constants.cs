@@ -26,17 +26,17 @@ namespace SpaceInvader
         public const int SPACECRAFT_DX = 8;
         public const int SPACECRAFT_DY = SPACECRAFT_DX * -1;
 
-        public const int ALIEN_WIDTH = 48;
-        public const int ALIEN_HEIGHT = 24;
+        public const int ALIEN_WIDTH = 99;
+        public const int ALIEN_HEIGHT = 54;
 
         public const int ALIEN_SPACE = 5;
 
         public const int SPACECRAFT_SPEED = 15;
 
-        public const int SPACECRAFT_WIDTH = 24;
-        public const int SPACECRAFT_HEIGHT = 24;
+        public const int SPACECRAFT_WIDTH = 99;
+        public const int SPACECRAFT_HEIGHT = 99;
         public const int LASER_WIDTH = 3;
-        public const int LASER_HEIGHT = 1;
+        public const int LASER_HEIGHT = 100;
     }
 
 }

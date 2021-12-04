@@ -15,12 +15,28 @@ namespace SpaceInvader
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
             CollisionLogic(cast);
+            LaserLogic(cast);
+        }
+
+        private void LaserLogic(Dictionary<string, List<Actor>> cast)
+        {
+            Laser laser = (Laser)cast["laser"][0];
+
+            if (laser.IsVisible())
+            {
+                int laserBounds = 0;
+                int laserBottom = laser.GetY() + Constants.LASER_HEIGHT;
+                if (laserBottom <= laserBounds)
+                {
+                    laser.SetVisible(false);
+                }
+            }
         }
 
         private void CollisionLogic(Dictionary<string, List<Actor>> cast)
         {
             Actor spaceCraft = cast["spaceCraft"][0];
-            Actor laser = cast["laser"][0];
+            Laser laser = (Laser)cast["laser"][0];
             List<Actor> aliens = cast["aliens"];
             
             Actor removeAlien = null;
@@ -33,11 +49,11 @@ namespace SpaceInvader
 
                     removeAlien = alien;
                     aliens.Remove(removeAlien);
+                    laser.SetVisible(false);
                     break;
                 }
             }
             
-            Actor removeSpaceCraft = null;
             foreach(Actor alien in aliens)
             {
                 bool collision = _physics.IsCollision(spaceCraft, alien);
@@ -45,7 +61,8 @@ namespace SpaceInvader
                 {
                     _audio.PlaySound(Constants.SOUND_BOUNCE);
 
-                    removeSpaceCraft = spaceCraft;
+                    spaceCraft.QuitGame();
+                    break;
                 }
             }
 

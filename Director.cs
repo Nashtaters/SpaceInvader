@@ -57,6 +57,12 @@ namespace SpaceInvader
             {
                 action.Execute(_cast);
             }
+
+            bool keepPlaying = _cast["spaceCraft"][0].KeepPlaying();
+            if (!keepPlaying)
+            {
+                _keepPlaying = false;
+            }
         }
 
     }

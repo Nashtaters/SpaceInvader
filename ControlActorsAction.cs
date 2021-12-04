@@ -37,14 +37,23 @@ namespace SpaceInvader
             Actor laser = cast["laser"][0];
             if (_input.IsSpacePressed())
             {
-                int xPos = laser.GetX();
-                if (xPos == Constants.X_OFF_SCREEN)
-                {
-                    Point laserPos = spaceCraft.GetPosition();
-                    laserPos = new Point(laserPos.GetX() + (Constants.SPACECRAFT_WIDTH / 2), laserPos.GetY());
-                    laser.SetPosition(laserPos);
-                }
+                LaserLogic(laser, spaceCraft);
             }
+        }
+
+        protected void LaserLogic(Actor laser, Actor spaceCraft)
+        {
+            bool visible = ((Laser)laser).IsVisible();
+            if (!visible)
+            {
+                //set laser to middle of the spacecraft
+                Laser realLaser = ((Laser)laser);
+                Point laserPos = spaceCraft.GetPosition();
+                laserPos = new Point(laserPos.GetX() + (Constants.SPACECRAFT_WIDTH / 2), laserPos.GetY());
+                laser.SetPosition(laserPos);
+                laser.SetVelocity(new Point(0, -5));
+                realLaser.SetVisible(true);
+            }   
         }
     }
 }
