@@ -142,7 +142,7 @@ namespace SpaceInvader.Casting
             //int newX = (x + dx) % Constants.MAX_X;
             //int newY = (y + dy) % Constants.MAX_Y;
 
-            int newX = (x + dx);
+            int newX = (x + dx) % Constants.MAX_X;
             int newY = (y + dy);
 
             if (newX < 0)

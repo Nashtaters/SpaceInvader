@@ -12,7 +12,7 @@ namespace SpaceInvader
         public const int FRAME_RATE = 30;
         public const string IMAGE_AIEN = "./Assets/alien.png";
         public const string IMAGE_SPACECRAFT = "./Assets/spacecraft.png";
-        public const string IMAGE_LASER = "./Assets/laser.png";
+        public const string IMAGE_LASER = "./Assets/laser2.png";
         public const string SOUND_START = "./Assets/start.wav";
         public const string SOUND_BOUNCE = "./Assets/boing.wav";
         public const string SOUND_OVER = "./Assets/over.wav";
@@ -35,8 +35,8 @@ namespace SpaceInvader
 
         public const int SPACECRAFT_WIDTH = 99;
         public const int SPACECRAFT_HEIGHT = 99;
-        public const int LASER_WIDTH = 3;
-        public const int LASER_HEIGHT = 100;
+        public const int LASER_WIDTH = 5;
+        public const int LASER_HEIGHT = 50;
     }
 
 }

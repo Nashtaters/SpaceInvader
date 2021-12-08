@@ -7,8 +7,6 @@ namespace SpaceInvader
 {
     public class HandleCollisionsAction : Action
     {
-        const int  FLASH_INTERVAL = 10;
-
         private PhysicsService _physics = new PhysicsService();
         private AudioService _audio = new AudioService();
 
