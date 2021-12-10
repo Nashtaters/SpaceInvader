@@ -62,26 +62,6 @@ namespace SpaceInvader
                     Point newVelocity = new Point(reverseVelocity.GetX()*-1, reverseVelocity.GetY());
                     alien.SetVelocity(newVelocity);
                 }
-                
-                // collision = _physics.IsCollision(alien, _topEdge);
-                // //check if alien hits top edge
-                // if (collision)
-                // {
-                //     Point reverseVelocity = alien.GetVelocity().Reverse();
-                //     Point newVelocity = new Point(reverseVelocity.GetX()*-1, reverseVelocity.GetY());
-                //     alien.SetVelocity(newVelocity);
-                // }
-
-                // collision = _physics.IsCollision(alien, _leftEdge);
-                // //check if the alien hits left edge
-                // if (collision)
-                // {
-                //     Point reverseVelocity = alien.GetVelocity().Reverse();
-                //     Point newVelocity = new Point(reverseVelocity.GetX(), reverseVelocity.GetY()*-1);
-                //     Point newPosition = new Point(alien.GetX(), alien.GetY() + 5);
-                //     alien.SetPosition(newPosition);
-                //     alien.SetVelocity(newVelocity);
-                // }                
             }
         }
 
