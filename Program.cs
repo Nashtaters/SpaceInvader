@@ -62,6 +62,9 @@ namespace SpaceInvader
             HandleCollisionsAction removeActors = new HandleCollisionsAction();
             script["update"].Add(removeActors);
 
+            HandleOffScreenAction edgeBarrier = new HandleOffScreenAction();
+            script["update"].Add(edgeBarrier);
+
             ControlActorsAction moveSpaceCraft = new ControlActorsAction();
             script["input"].Add(moveSpaceCraft);
 

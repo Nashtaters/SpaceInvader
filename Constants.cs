@@ -37,6 +37,9 @@ namespace SpaceInvader
         public const int SPACECRAFT_HEIGHT = 99;
         public const int LASER_WIDTH = 5;
         public const int LASER_HEIGHT = 50;
+
+        public const int ALIEN_MOVE_LEFT = -1;
+        public const int ALIEN_MOVE_RIGHT = 1;
     }
 
 }
