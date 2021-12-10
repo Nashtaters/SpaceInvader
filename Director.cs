@@ -59,6 +59,11 @@ namespace SpaceInvader
             }
 
             bool keepPlaying = _cast["spaceCraft"][0].KeepPlaying();
+            //check for remaining aliens
+            if (keepPlaying)
+            {
+                keepPlaying = _cast["aliens"].Count != 0;
+            }
             if (!keepPlaying)
             {
                 _keepPlaying = false;
